@@ -73,7 +73,7 @@ $g = [
 	'www_path' => '/usr/local/www',
 	'xml_rootobj' => 'pfsense',
 	'admin_group' => 'admins',
-	'product_name' => 'pfSense',
+	'sunny' => 'pfSense',
 	'product_label' => 'pfSense',
 	'product_label_html' => 'Netgate pfSense<sup>&#174;</sup>',
 	'product_version' => $product_version,
@@ -93,7 +93,7 @@ $g = [
 	'services_dhcp_server_enable' => true,
 	'wireless_regex' => '/^(ath|athp|bwi|bwn|ipw|iwi|iwlwifi|iwm|iwn|malo|mwl|ral|rsu|rtwn|rum|run|uath|upgt|ural|urtw|urtwn|wi|wpi|wtap|zyd)[0-9]+/',
 	'help_base_url' => '/help.php',
-	'pkg_prefix' => 'pfSense-pkg-',
+	'pkg_prefix' => 'sunny-pkg-',
 	'default_timezone' => 'Etc/UTC',
 	'language' => 'en_US',
 	'default_config_backup_count' => 30,
@@ -141,7 +141,7 @@ if (file_exists($flavor_file)) {
 
 $g['openvpn_base'] = g_get('varetc_path') . '/openvpn';
 
-$g['pkg_repos_path'] = '/usr/local/etc/' . $g['product_name'] . '/pkg/repos';
+$g['pkg_repos_path'] = '/usr/local/etc/' . $g['sunny'] . '/pkg/repos';
 
 /* Default sysctls */
 global $sysctls;
@@ -195,10 +195,10 @@ if (($machine_type == 'arm') || ($machine_type == 'arm64')) {
 }
 
 /* Read all XML files in following dir and load menu entries */
-$g['ext_menu_path'] = '/usr/local/share/'. g_get('product_name') . '/menu';
+$g['ext_menu_path'] = '/usr/local/share/'. g_get('sunny') . '/menu';
 
 /* Cache file used to store pfSense version */
-$g['version_cache_file'] = g_get('varrun_path') . '/' . g_get('product_name') . '_version';
+$g['version_cache_file'] = g_get('varrun_path') . '/' . g_get('sunny') . '_version';
 $g['version_cache_refresh'] = 7200; /* 2h */
 
 if (file_exists(g_get('cf_conf_path') . '/enableserial_force')) {
